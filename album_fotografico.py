@@ -36,12 +36,10 @@ def aggiungi_foto(album, codice, titolo, autore, mese, anno, file_path):
     if mese < 1 or mese > 12:
         return None
 
-    for elemento in album: # elemento è la coppia anno + lista foto (codice, ecc...)
+    for elemento in album: # elemento è la coppia anno + lista foto (codice, ecc...)!!!
         for foto in elemento[1]: # scorro le foto singolarmente
             if foto[0] == codice:
                 return None # dalla traccia
-
-
     try:
         nuova_foto = [codice, titolo, autore, mese, anno]
         with open(file_path, "a", newline="", encoding="utf-8") as f:
@@ -159,7 +157,6 @@ def main():
             break
         else:
             print("Opzione non valida. Riprova.")
-
 
 if __name__ == "__main__":
     main()
